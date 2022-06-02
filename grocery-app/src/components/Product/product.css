@@ -1,0 +1,20 @@
+.outer-box{
+border:1px solid black;
+height:350px;
+width: 200px;
+margin: 10px;
+}
+
+.image-product{
+    width: 180px;
+    height:180px
+}
+.quantity{
+    position: relative;
+    bottom: 20px;
+    left:40px
+}
+/* 
+.add-to-cart-button{
+    background-color: !important;
+} */

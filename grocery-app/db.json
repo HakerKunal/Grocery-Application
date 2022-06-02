@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "washing Powder",
+      "description": "Description",
+      "price":200,
+      "imgLocation":"https://m.media-amazon.com/images/I/81YakxRZLzL._SY450_.jpg"
+    }, 
+    {
+      "id": 2,
+      "name": "RajDhani Atta",
+      "description": "Description",
+      "price":500,
+      "imgLocation":"https://www.jiomart.com/images/product/original/490870618/rajdhani-full-fibre-chakki-fresh-whole-wheat-atta-10-kg-product-images-o490870618-p490870618-0-202203151438.jpg"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

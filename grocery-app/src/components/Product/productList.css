@@ -1,0 +1,6 @@
+.product-container{
+    position: relative;
+    left:100px;
+    display: flex;
+    flex-direction: row;
+}
