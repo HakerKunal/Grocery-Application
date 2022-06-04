@@ -27,3 +27,6 @@
     transform: rotate(-5deg) translateY(-4rm) translateX(-1rem);
 
 }
+link {
+    display: none;
+  }

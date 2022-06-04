@@ -1,52 +1,65 @@
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import {
+  addToCart,
+  loadCurrentItem,
+} from "../../redux/Shopping/shopping-actions";
 
 import "./product.css";
+import { Link } from "react-router-dom";
 
-function Product(props) {
-  let [product, setProduct] = useState({
-    id: props.item.id,
-    name: props.item.name,
-    description: props.item.description,
-    price: props.item.description,
-  });
-  let [quantity, setQuantity] = useState(0);
-
-  function incrementCount() {
-    setQuantity(quantity + 1);
-  }
-  function decrementCount() {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
-    }
-  }
+function Product({ item, addToCart, loadCurrentItem }) {
   return (
     <Card className="outer-box">
-      <img className="image-product" src={props.item.imgLocation} />
+      <img className="image-product" src={item.imgLocation} alt="product" />
 
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-          {props.item.name}
+        <Typography gutterBottom component="div" className="item_name_box">
+          <span className="item__name"> {item.name}</span>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Price- Rs {props.item.price}
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="price__product"
+        >
+          Price- Rs {item.price}
         </Typography>
       </CardContent>
 
-      <CardActions>
-        <Button variant="outlined" size="small" className="add-to-cart-button">
+      <CardActions className="buttons">
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={() => addToCart(item.id)}
+        >
           Add to Cart
         </Button>
-        <div className="quantity">{quantity}</div>
-        <button onClick={incrementCount}>+</button>
-        <button onClick={decrementCount}>-</button>
+        <Link
+          to={`/product/${item.id}`}
+          style={{ color: "inherit", textDecoration: "inherit" }}
+        >
+          <Button
+            size="small"
+            variant="contained"
+            color="primary"
+            onClick={() => loadCurrentItem(item)}
+          >
+            View Details
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );
 }
-export default Product;
+const mapDipatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+    loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
+  };
+};
+export default connect(null, mapDipatchToProps)(Product);

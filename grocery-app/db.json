@@ -4,6 +4,7 @@
       "id": 1,
       "name": "washing Powder",
       "description": "Description",
+      "category":"house cleaning",
       "price":200,
       "imgLocation":"https://m.media-amazon.com/images/I/81YakxRZLzL._SY450_.jpg"
     }, 
@@ -11,8 +12,17 @@
       "id": 2,
       "name": "RajDhani Atta",
       "description": "Description",
+      "category":"food",
       "price":500,
       "imgLocation":"https://www.jiomart.com/images/product/original/490870618/rajdhani-full-fibre-chakki-fresh-whole-wheat-atta-10-kg-product-images-o490870618-p490870618-0-202203151438.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dove Cream",
+      "description": "Description",
+      "category":"causmetic",
+      "price":450,
+      "imgLocation":"https://m.media-amazon.com/images/I/71cYkixLU4L._SL1500_.jpg"
     }
   ],
   "comments": [
