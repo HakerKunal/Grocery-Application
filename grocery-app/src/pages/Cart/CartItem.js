@@ -6,10 +6,9 @@ import {
 } from "../../redux/Shopping/shopping-actions";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import { IconButton } from "@mui/material";
-
 import { connect } from "react-redux";
 
-function CartItem({ item, removeFromCart, adjustQty }) {
+const CartItem = ({ item, removeFromCart, adjustQty }) => {
   const [input, setInput] = useState(item.qty);
 
   const onChangeHandlerMinus = (e) => {
@@ -52,7 +51,7 @@ function CartItem({ item, removeFromCart, adjustQty }) {
       </div>
     </div>
   );
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -5,12 +5,12 @@ import Header from "../../components/header/Header";
 import CartItem from "./CartItem";
 import { Button } from "@mui/material";
 
-function Cart({ cart }) {
+const Cart = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  let items = 0;
+  let price = 0;
   useEffect(() => {
-    let items = 0;
-    let price = 0;
     cart.forEach((item) => {
       items += item.qty;
       price += item.price * item.qty;
@@ -18,7 +18,7 @@ function Cart({ cart }) {
     setTotalPrice(price);
     setTotalItems(items);
   }, [totalPrice, totalItems, setTotalItems, setTotalPrice, cart]);
-  console.log(cart);
+
   return (
     <div>
       <Header />
@@ -48,7 +48,7 @@ function Cart({ cart }) {
       </div>
     </div>
   );
-}
+};
 const mapStateToProps = (state) => {
   return {
     cart: state.shop.cart,

@@ -9,11 +9,10 @@ import {
   addToCart,
   loadCurrentItem,
 } from "../../redux/Shopping/shopping-actions";
-
 import "./product.css";
 import { Link } from "react-router-dom";
 
-function Product({ item, addToCart, loadCurrentItem }) {
+const Product = ({ item, addToCart, loadCurrentItem }) => {
   return (
     <Card className="outer-box">
       <img className="image-product" src={item.imgLocation} alt="product" />
@@ -31,7 +30,7 @@ function Product({ item, addToCart, loadCurrentItem }) {
         </Typography>
       </CardContent>
 
-      <CardActions className="buttons">
+      <CardActions className="button__design">
         <Button
           variant="outlined"
           size="small"
@@ -55,7 +54,7 @@ function Product({ item, addToCart, loadCurrentItem }) {
       </CardActions>
     </Card>
   );
-}
+};
 const mapDipatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),

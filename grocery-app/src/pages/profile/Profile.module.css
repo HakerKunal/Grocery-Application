@@ -1,9 +1,9 @@
-.profile__outerbox{
+.profile__outerbox {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.26);
     border-radius: 10px;
     position: relative;
-    top:20px;
-    left:450px;
+    top: 20px;
+    left: 450px;
     width: 500px;
     height: 500px;
     display: flex;
@@ -11,45 +11,45 @@
     align-items: center;
 }
 
-.profile__image{
+.profile__image {
     position: relative;
-    top:20px;
+    top: 20px;
     border: 1px solid black;
     height: 200px;
     width: 200px;
     border-radius: 50%;
 }
 
-.username__box{
+.username__box {
     position: relative;
-    top:30px;
+    top: 30px;
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.26);
     justify-content: space-around;
     width: 400px;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
-    
+
 }
 
-.error__text{
+.error__text {
     position: relative;
-    top:20px;
+    top: 20px;
     font-size: 35px;
     color: red;
 }
 
-.name{
+.name {
     color: brown;
     position: relative;
     right: 25px;
 }
 
-.userdata{
-    
+.userdata {
+
     text-align: center;
-    
+
     width: 200px;
 }

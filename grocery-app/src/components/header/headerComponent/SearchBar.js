@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { searchItem } from "../../redux/Shopping/shopping-actions";
+import { searchItem } from "../../../redux/Shopping/shopping-actions";
 import "./SearchBar.css";
 import { connect } from "react-redux";
 

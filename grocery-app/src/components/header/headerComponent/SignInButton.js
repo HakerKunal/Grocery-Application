@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./SignInButton.module.css";
 import { connect } from "react-redux";
-import { logout } from "../../redux/User/user-actions";
+import { logout } from "../../../redux/User/user-actions";
 const SignInButton = ({ status, logout }) => {
   const handleLogout = () => {
-    console.log("logout");
     logout();
   };
   return (
@@ -13,10 +12,7 @@ const SignInButton = ({ status, logout }) => {
       {status ? (
         <span onClick={handleLogout}>Logout</span>
       ) : (
-        <Link
-          to="/signin"
-          style={{ color: "inherit", textDecoration: "inherit" }}
-        >
+        <Link to="/signin" className={classes.link__color}>
           <span>Sign In</span>
         </Link>
       )}

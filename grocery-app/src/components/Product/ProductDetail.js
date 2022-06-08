@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./SingleItem.module.css";
+import styles from "./ProductDetail.module.css";
 import Header from "../header/Header";
-
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/Shopping/shopping-actions";
 

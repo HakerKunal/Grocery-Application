@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Header from "../../components/header/Header";
 import ProductList from "../../components/Product/ProductList";
 import { loadAllProduct } from "../../redux/Shopping/shopping-actions";
-function MainPage({ loadAllProduct }) {
+const MainPage = ({ loadAllProduct }) => {
   useEffect(() => {
     fetch("http://localhost:3004/products")
       .then((res) => res.json())
@@ -17,7 +17,7 @@ function MainPage({ loadAllProduct }) {
       <ProductList />
     </div>
   );
-}
+};
 const mapDipatchToProps = (dispatch) => {
   return {
     loadAllProduct: (item) => dispatch(loadAllProduct(item)),

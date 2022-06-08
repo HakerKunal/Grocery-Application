@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./signup.css";
-import sidenav from "./sideimage3.jpg";
+import sidenav from "../../components/assets/sideimage3.jpg";
 import { Link } from "react-router-dom";
 import { signupServer } from "../../services/auth_services";
 import { useNavigate } from "react-router-dom";
-function SignUp() {
+const SignUp = () => {
   const [userObj, setUserObj] = useState({
     username: "",
     first_name: "",
@@ -18,19 +18,15 @@ function SignUp() {
   const validateEmail = (event) => {
     setUserObj((userObj) => ({ ...userObj, email: event.target.value }));
     const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
-    if (emailRegex.test(userObj.email)) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    setIsValid(emailRegex.test(userObj.email));
   };
 
   const handleSignUp = () => {
-    if (isValid === false) {
+    if (!isValid) {
       alert("Enter a valid email address");
     } else if (
-      userObj.firstname !== "" &&
-      userObj.lastname !== "" &&
+      userObj.first_name !== "" &&
+      userObj.last_name !== "" &&
       userObj.username !== "" &&
       userObj.email !== "" &&
       userObj.password !== ""
@@ -129,6 +125,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;

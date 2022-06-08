@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./signup.css";
-import sidenav from "./sideimage3.jpg";
+import sidenav from "../../components/assets/sideimage3.jpg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { login, setToken, setUserDetails } from "../../redux/User/user-actions";
 import { useNavigate } from "react-router-dom";
 import { fetchUserDetail, signinServer } from "../../services/auth_services";
 
-function SignIn({ logIn, setToken, setUserDetails }) {
+const SignIn = ({ logIn, setToken, setUserDetails }) => {
   const [userObj, setUserObj] = useState({ username: "", password: "" });
   let navigate = useNavigate();
 
@@ -24,7 +24,7 @@ function SignIn({ logIn, setToken, setUserDetails }) {
   };
   const handleSubmit = () => {
     if (userObj.username === "") {
-      alert("User name is empty");
+      alert("Username should not be empty");
     }
     if (userObj.password === "") {
       alert("Password is empty");
@@ -32,7 +32,6 @@ function SignIn({ logIn, setToken, setUserDetails }) {
     if (userObj.username !== "" && userObj.password !== "") {
       signinServer(userObj)
         .then((res) => {
-          console.log(res);
           logIn();
           setToken(res.data.token);
           saveUserDetails(res.data.token);
@@ -57,9 +56,9 @@ function SignIn({ logIn, setToken, setUserDetails }) {
           <label className="sign-heading">Sign In</label>
           <input
             type="text"
-            name="txt"
+            name="username"
             placeholder="User name"
-            required=""
+            required={true}
             onChange={handleUsername}
           />
 
@@ -85,7 +84,7 @@ function SignIn({ logIn, setToken, setUserDetails }) {
       </div>
     </div>
   );
-}
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     logIn: () => dispatch(login()),

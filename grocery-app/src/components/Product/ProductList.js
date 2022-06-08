@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Product from "./Product";
 import "./productList.css";
 import { connect } from "react-redux";
-// import { searchItem } from "../../redux/Shopping/shopping-actions";
 
-function ProductList({ products, searchKeyword }) {
+const ProductList = ({ products, searchKeyword }) => {
   let listOfProduct = products
     .filter((item) => {
       if (item.name.toLowerCase().includes(searchKeyword.toLowerCase())) {
@@ -21,7 +20,7 @@ function ProductList({ products, searchKeyword }) {
       )}
     </div>
   );
-}
+};
 const mapStateToProps = (state) => {
   return {
     products: state.shop.products,

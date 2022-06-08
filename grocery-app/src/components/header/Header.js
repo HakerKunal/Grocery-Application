@@ -1,22 +1,24 @@
 import React, { Fragment } from "react";
-import classes from "./header.module.css";
-import banner from "./banner.jpg";
-import HeaderCartButton from "./HeaderCartButton";
+import classes from "./Header.module.css";
+import banner from "../assets/banner.jpg";
+import HeaderCartButton from "./headerComponent/HeaderCartButton";
 import { Link } from "react-router-dom";
-import SignInButton from "./SignInButton";
-import SearchBar from "./SearchBar";
-import ProfileButton from "./ProfileButton";
-const Header = (props) => {
+import SignInButton from "./headerComponent/SignInButton";
+import SearchBar from "./headerComponent/SearchBar";
+import ProfileButton from "./headerComponent/ProfileButton";
+import { connect } from "react-redux";
+const Header = ({ status }) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
+        <Link to="/" className={classes.link__color}>
           <h1 component={Link} to={"/first"}>
             Grocery App
           </h1>
         </Link>
         <SearchBar />
-        <ProfileButton />
+        {status ? <ProfileButton /> : null}
+
         <SignInButton />
         <HeaderCartButton />
       </header>
@@ -26,5 +28,10 @@ const Header = (props) => {
     </Fragment>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    status: state.user.Login_status,
+  };
+};
 
-export default Header;
+export default connect(mapStateToProps)(Header);

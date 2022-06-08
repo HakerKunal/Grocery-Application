@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/header/Header";
 import { connect } from "react-redux";
 import classes from "./Profile.module.css";
-import profileImg from "./profile.jpg";
+import profileImg from "../../components/assets/profile.jpg";
 
 const Profile = ({ userObj }) => {
   return (

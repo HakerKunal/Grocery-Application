@@ -11,7 +11,11 @@
     border-radius: 25px;
     font-weight: bold;
     position: relative;
- left:50px
+    left: 50px
+}
 
-   
-  }
+.link__color {
+
+    color: inherit;
+    text-decoration: none
+}

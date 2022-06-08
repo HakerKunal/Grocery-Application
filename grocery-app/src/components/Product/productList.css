@@ -1,21 +1,17 @@
-.product-outerbox{
-
-}
-
-.product-container{
+.product-container {
     display: flex;
     flex-direction: row;
     position: relative;
-    left:100px;
+    left: 100px;
 
     width: 80vw;
 
     flex-wrap: wrap;
-    
 }
-.noproduct{
+
+.noproduct {
     position: relative;
-    top:30px;
-    left:30px;
+    top: 30px;
+    left: 30px;
     font-size: larger;
 }
