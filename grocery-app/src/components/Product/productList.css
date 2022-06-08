@@ -1,0 +1,17 @@
+.product-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 100px;
+
+    width: 80vw;
+
+    flex-wrap: wrap;
+}
+
+.noproduct {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    font-size: larger;
+}
