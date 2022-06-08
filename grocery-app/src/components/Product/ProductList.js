@@ -2,20 +2,30 @@ import React, { useState, useEffect } from "react";
 import Product from "./Product";
 import "./productList.css";
 import { connect } from "react-redux";
+// import { searchItem } from "../../redux/Shopping/shopping-actions";
 
-function ProductList({ products }) {
-  let listOfProduct = products.map((item, id) => (
-    <Product key={id} item={item} />
-  ));
+function ProductList({ products, searchKeyword }) {
+  let listOfProduct = products
+    .filter((item) => {
+      if (item.name.toLowerCase().includes(searchKeyword.toLowerCase())) {
+        return item;
+      }
+    })
+    .map((item, id) => <Product key={id} item={item} />);
   return (
     <div className="product-outerbox">
-      <div className="product-container">{listOfProduct}</div>
+      {listOfProduct.length ? (
+        <div className="product-container">{listOfProduct}</div>
+      ) : (
+        <label className="noproduct">No Product Found........</label>
+      )}
     </div>
   );
 }
 const mapStateToProps = (state) => {
   return {
     products: state.shop.products,
+    searchKeyword: state.shop.searchKeyword,
   };
 };
 

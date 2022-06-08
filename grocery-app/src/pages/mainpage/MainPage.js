@@ -1,9 +1,16 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import Header from "../../components/header/Header";
 import ProductList from "../../components/Product/ProductList";
-
-function MainPage() {
+import { loadAllProduct } from "../../redux/Shopping/shopping-actions";
+function MainPage({ loadAllProduct }) {
+  useEffect(() => {
+    fetch("http://localhost:3004/products")
+      .then((res) => res.json())
+      .then((res) => {
+        loadAllProduct(res);
+      });
+  }, []);
   return (
     <div>
       <Header />
@@ -11,4 +18,9 @@ function MainPage() {
     </div>
   );
 }
-export default MainPage;
+const mapDipatchToProps = (dispatch) => {
+  return {
+    loadAllProduct: (item) => dispatch(loadAllProduct(item)),
+  };
+};
+export default connect(null, mapDipatchToProps)(MainPage);

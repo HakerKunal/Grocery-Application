@@ -13,3 +13,9 @@
     flex-wrap: wrap;
     
 }
+.noproduct{
+    position: relative;
+    top:30px;
+    left:30px;
+    font-size: larger;
+}

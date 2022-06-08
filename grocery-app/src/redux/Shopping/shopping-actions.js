@@ -33,3 +33,15 @@ export const loadCurrentItem = (item) => {
     payload: item,
   };
 };
+export const loadAllProduct = (item) => {
+  return {
+    type: actionTypes.LOAD_ALL_PRODUCT,
+    payload: item,
+  };
+};
+export const searchItem = (item) => {
+  return {
+    type: actionTypes.SEARCH_ITEM,
+    payload: item,
+  };
+};

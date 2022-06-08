@@ -3,6 +3,7 @@ import styles from "./Cart.module.css";
 import { connect } from "react-redux";
 import Header from "../../components/header/Header";
 import CartItem from "./CartItem";
+import { Button } from "@mui/material";
 
 function Cart({ cart }) {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -35,9 +36,14 @@ function Cart({ cart }) {
             <span>TOTAL: ({totalItems} items)</span>
             <span>Rs {totalPrice}</span>
           </div>
-          <button className={styles.summary__checkoutBtn}>
+          <Button
+            className={styles.summary__checkoutBtn}
+            size="small"
+            variant="contained"
+            color="primary"
+          >
             Proceed To Checkout
-          </button>
+          </Button>
         </div>
       </div>
     </div>

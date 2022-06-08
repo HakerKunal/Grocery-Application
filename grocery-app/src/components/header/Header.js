@@ -3,6 +3,9 @@ import classes from "./header.module.css";
 import banner from "./banner.jpg";
 import HeaderCartButton from "./HeaderCartButton";
 import { Link } from "react-router-dom";
+import SignInButton from "./SignInButton";
+import SearchBar from "./SearchBar";
+import ProfileButton from "./ProfileButton";
 const Header = (props) => {
   return (
     <Fragment>
@@ -12,6 +15,9 @@ const Header = (props) => {
             Grocery App
           </h1>
         </Link>
+        <SearchBar />
+        <ProfileButton />
+        <SignInButton />
         <HeaderCartButton />
       </header>
       <div className={classes["main-image"]}>

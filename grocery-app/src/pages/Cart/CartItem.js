@@ -12,10 +12,17 @@ import { connect } from "react-redux";
 function CartItem({ item, removeFromCart, adjustQty }) {
   const [input, setInput] = useState(item.qty);
 
-  const onChangeHandler = (e) => {
-    setInput(e.target.value);
-    adjustQty(item.id, e.target.value);
+  const onChangeHandlerMinus = (e) => {
+    if (input > 1) {
+      setInput(input - 1);
+      adjustQty(item.id, input - 1);
+    }
   };
+  const onChangeHandlerPlus = (e) => {
+    setInput(input + 1);
+    adjustQty(item.id, input + 1);
+  };
+
   return (
     <div className={styles.cartItem}>
       <img
@@ -31,14 +38,13 @@ function CartItem({ item, removeFromCart, adjustQty }) {
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
           <label htmlFor="qty">Qty</label>
-          <input
-            min="1"
-            type="number"
-            id="qty"
-            name="qty"
-            value={input}
-            onChange={onChangeHandler}
-          />
+          <input min="1" id="qty" name="qty" value={input} />
+          <button className={styles.qty__button} onClick={onChangeHandlerPlus}>
+            +
+          </button>
+          <button className={styles.qty__button} onClick={onChangeHandlerMinus}>
+            -
+          </button>
         </div>
         <IconButton onClick={() => removeFromCart(item.id)}>
           <DeleteOutlineRoundedIcon className={styles.actions__deleteItemBtn} />
