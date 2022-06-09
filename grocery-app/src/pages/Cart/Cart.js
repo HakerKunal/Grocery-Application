@@ -4,12 +4,16 @@ import { connect } from "react-redux";
 import Header from "../../components/header/Header";
 import CartItem from "./CartItem";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { setTotal } from "../../redux/Shopping/shopping-actions";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setTotal, status }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
+  let navigate = useNavigate();
   let items = 0;
   let price = 0;
+
   useEffect(() => {
     cart.forEach((item) => {
       items += item.qty;
@@ -18,6 +22,15 @@ const Cart = ({ cart }) => {
     setTotalPrice(price);
     setTotalItems(items);
   }, [totalPrice, totalItems, setTotalItems, setTotalPrice, cart]);
+
+  const handleCheckout = () => {
+    if (status) {
+      setTotal(totalPrice);
+      navigate("/checkout");
+    } else {
+      alert("Please Login First...");
+    }
+  };
 
   return (
     <div>
@@ -36,14 +49,28 @@ const Cart = ({ cart }) => {
             <span>TOTAL: ({totalItems} items)</span>
             <span>Rs {totalPrice}</span>
           </div>
-          <Button
-            className={styles.summary__checkoutBtn}
-            size="small"
-            variant="contained"
-            color="primary"
-          >
-            Proceed To Checkout
-          </Button>
+          {cart.length ? (
+            <Button
+              className={styles.summary__checkoutBtn}
+              size="small"
+              variant="contained"
+              color="primary"
+              onClick={handleCheckout}
+            >
+              Proceed To Checkout
+            </Button>
+          ) : (
+            <Button
+              className={styles.summary__checkoutBtn}
+              size="small"
+              variant="contained"
+              color="primary"
+              onClick={handleCheckout}
+              disabled
+            >
+              Proceed To Checkout
+            </Button>
+          )}
         </div>
       </div>
     </div>
@@ -52,7 +79,13 @@ const Cart = ({ cart }) => {
 const mapStateToProps = (state) => {
   return {
     cart: state.shop.cart,
+    status: state.user.Login_status,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setTotal: (total) => dispatch(setTotal(total)),
   };
 };
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

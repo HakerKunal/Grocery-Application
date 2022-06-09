@@ -1,0 +1,87 @@
+.checkout__outer__div {
+  box-shadow: 0 2px 8px rgba(209, 0, 0, 0.26);
+  position: relative;
+  top: 40px;
+  left: 100px;
+  width: 80%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkout__heading {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: larger;
+}
+.checkout__question {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 200px;
+  margin-top: 20px;
+}
+.checkout__answer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 500px;
+  margin-top: 20px;
+}
+
+.checkout__attribute {
+  margin-bottom: 20px;
+}
+
+.mode__of__payment {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 120px;
+  width: 500px;
+}
+.radio__button {
+  position: relative;
+  right: 30px;
+  bottom: 20px;
+}
+.span__font {
+  font-size: 12px;
+  width: 200px;
+}
+.checkout__address {
+  position: relative;
+  bottom: 50px;
+  right: 150px;
+}
+.checkout__phone__number {
+  width: 200px;
+  position: relative;
+  bottom: 80px;
+  right: 200px;
+}
+
+.sign__button {
+  border: 1px solid #4d1601;
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: brown;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  position: relative;
+  bottom: 100px;
+}

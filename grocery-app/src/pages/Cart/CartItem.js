@@ -37,7 +37,7 @@ const CartItem = ({ item, removeFromCart, adjustQty }) => {
       <div className={styles.cartItem__actions}>
         <div className={styles.cartItem__qty}>
           <label htmlFor="qty">Qty</label>
-          <input min="1" id="qty" name="qty" value={input} />
+          <input min="1" id="qty" name="qty" value={input} readOnly />
           <button className={styles.qty__button} onClick={onChangeHandlerPlus}>
             +
           </button>

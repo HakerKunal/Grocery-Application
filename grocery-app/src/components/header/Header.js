@@ -7,6 +7,7 @@ import SignInButton from "./headerComponent/SignInButton";
 import SearchBar from "./headerComponent/SearchBar";
 import ProfileButton from "./headerComponent/ProfileButton";
 import { connect } from "react-redux";
+import OrderButton from "./headerComponent/OrderButton";
 const Header = ({ status }) => {
   return (
     <Fragment>
@@ -17,7 +18,11 @@ const Header = ({ status }) => {
           </h1>
         </Link>
         <SearchBar />
-        {status ? <ProfileButton /> : null}
+        {status ? (
+          <div className={classes.header__order__button}>
+            <OrderButton /> <ProfileButton />
+          </div>
+        ) : null}
 
         <SignInButton />
         <HeaderCartButton />

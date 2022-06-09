@@ -5,6 +5,8 @@ const INITIAL_STATE = {
   cart: [],
   currentItem: null,
   searchKeyword: "",
+  total: 0,
+  order: [],
 };
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -53,6 +55,22 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         searchKeyword: action.payload,
       };
+    case actionTypes.SET_TOTAL:
+      return {
+        ...state,
+        total: action.payload,
+      };
+    case actionTypes.SET_ORDER:
+      return {
+        ...state,
+        order: action.payload,
+      };
+    case actionTypes.RESET_CART:
+      return {
+        ...state,
+        cart: [],
+      };
+
     default:
       return state;
   }

@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/SignIn/SignIn";
 import ProductDetails from "./components/Product/ProductDetail";
 import Profile from "./pages/profile/Profile";
+import Checkout from "./pages/checkout/Checkout";
+import Order from "./pages/Order/Order";
 function App({ current }) {
   return (
     <Router>
@@ -17,6 +19,8 @@ function App({ current }) {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/orders" element={<Order />}></Route>
         {!current ? (
           <Route exact path="/" element={<MainPage />}></Route>
         ) : (
