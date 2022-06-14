@@ -7,6 +7,7 @@ const INITIAL_STATE = {
   searchKeyword: "",
   total: 0,
   order: [],
+  filterKeyword: "",
 };
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -69,6 +70,11 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cart: [],
+      };
+    case actionTypes.FILTER_ITEM:
+      return {
+        ...state,
+        filterKeyword: action.payload,
       };
 
     default:

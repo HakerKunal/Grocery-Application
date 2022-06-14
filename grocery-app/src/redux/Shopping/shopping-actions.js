@@ -58,9 +58,14 @@ export const setOrders = (order) => {
     payload: order,
   };
 };
-export const resetCart =()=>{
-  return{
-    type:actionTypes.RESET_CART,
-    
-  }
-}
+export const resetCart = () => {
+  return {
+    type: actionTypes.RESET_CART,
+  };
+};
+export const filterItem = (item) => {
+  return {
+    type: actionTypes.FILTER_ITEM,
+    payload: item,
+  };
+};

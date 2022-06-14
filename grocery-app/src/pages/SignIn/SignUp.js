@@ -46,9 +46,9 @@ const SignUp = () => {
   return (
     <div className="signup-outer-div">
       <div className="signup-image">
-        <img src={sidenav} width="700px" height="600px"></img>
+        <img src={sidenav} width="700px" height="600px" alt="signup"></img>
       </div>
-      <div className="signup-form">
+      <div className="signup-form" data-testid="signup-form">
         <span className="signup-heading">Welcome to Grocery App</span>
 
         <div className="signup">

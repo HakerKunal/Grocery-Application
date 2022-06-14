@@ -22,7 +22,7 @@ const HeaderCartButton = ({ cart, login_status }) => {
   return (
     <button className={classes.button} onClick={handleOnclick}>
       <span className={classes.icon}>
-        <ShoppingCartIcon />
+        <ShoppingCartIcon data-testid="shopping-carticon"/>
       </span>
       <span>Your Cart</span>
       <span className={classes.badge}>{cartCount}</span>

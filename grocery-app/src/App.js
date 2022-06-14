@@ -12,22 +12,24 @@ import Checkout from "./pages/checkout/Checkout";
 import Order from "./pages/Order/Order";
 function App({ current }) {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<MainPage />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/signin" element={<SignIn />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/checkout" element={<Checkout />}></Route>
-        <Route path="/orders" element={<Order />}></Route>
-        {!current ? (
+    <div>
+      <Router>
+        <Routes>
           <Route exact path="/" element={<MainPage />}></Route>
-        ) : (
-          <Route exact path="/product/:id" element={<ProductDetails />} />
-        )}
-      </Routes>
-    </Router>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/orders" element={<Order />}></Route>
+          {!current ? (
+            <Route exact path="/" element={<MainPage />}></Route>
+          ) : (
+            <Route exact path="/product/:id" element={<ProductDetails />} />
+          )}
+        </Routes>
+      </Router>
+    </div>
   );
 }
 const mapStateToProps = (state) => {

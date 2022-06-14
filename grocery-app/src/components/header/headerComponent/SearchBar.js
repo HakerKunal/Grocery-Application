@@ -13,18 +13,18 @@ const SearchBar = ({ searchItem }) => {
   };
 
   return (
-    <div class="wrap">
-      <div class="search">
+    <div className="wrap">
+      <div className="search">
         <input
           type="text"
-          class="searchTerm"
+          className="searchTerm"
           placeholder="What are you looking for?"
           onChange={changeSearch}
           value={searchKeyword}
         />
         <button
           type="submit"
-          class="searchButton"
+          className="searchButton"
           onClick={() => searchItem(searchKeyword)}
         >
           Search

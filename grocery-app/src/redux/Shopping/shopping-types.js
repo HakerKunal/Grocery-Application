@@ -7,3 +7,4 @@ export const SEARCH_ITEM = "SEARCH_ITEM";
 export const RESET_CART = "RESET_CART";
 export const SET_TOTAL = "SET_TOTAL";
 export const SET_ORDER = "SET__ORDER";
+export const FILTER_ITEM = "FILTER_ITEM";
