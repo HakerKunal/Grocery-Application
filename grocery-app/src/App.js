@@ -1,15 +1,15 @@
 import "./App.css";
 import React from "react";
 import MainPage from "./pages/mainpage/MainPage";
-import Cart from "./pages/Cart/Cart";
+import Cart from "./pages/Cart/Cart/Cart";
 import { connect } from "react-redux";
-import SignUp from "./pages/SignIn/SignUp";
+import SignUp from "./pages/SignIn/SignUp/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignIn from "./pages/SignIn/SignIn";
-import ProductDetails from "./components/Product/ProductDetail";
+import SignIn from "./pages/SignIn/SignIn/SignIn";
+import ProductDetails from "./components/Product/ProductDetail/ProductDetail";
 import Profile from "./pages/profile/Profile";
 import Checkout from "./pages/checkout/Checkout";
-import Order from "./pages/Order/Order";
+import Order from "./pages/Order/Order/Order";
 function App({ current }) {
   return (
     <div>

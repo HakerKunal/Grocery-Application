@@ -52,7 +52,12 @@ const Checkout = ({ total, cart, token, resetCart }) => {
           <span className={classes.checkout__attribute}>Phone Number</span>
         </div>
         <div className={classes.checkout__answer}>
-          <span className={classes.checkout__attribute}>Rs {total}</span>
+          <span
+            className={classes.checkout__attribute}
+            data-testid="test-price"
+          >
+            Rs {total}
+          </span>
           <div
             className={classes.mode__of__payment}
             onChange={(event) => {
@@ -85,10 +90,12 @@ const Checkout = ({ total, cart, token, resetCart }) => {
             type="text"
             className={classes.checkout__address}
             value={addesss}
+            placeholder="Enter the Address"
             onChange={(event) => setAddress(event.target.value)}
           ></input>
           <input
             type="text"
+            placeholder="Enter the Phone Number"
             className={classes.checkout__phone__number}
           ></input>
         </div>
