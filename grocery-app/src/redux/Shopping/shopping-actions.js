@@ -45,3 +45,27 @@ export const searchItem = (item) => {
     payload: item,
   };
 };
+export const setTotal = (total) => {
+  return {
+    type: actionTypes.SET_TOTAL,
+    payload: total,
+  };
+};
+
+export const setOrders = (order) => {
+  return {
+    type: actionTypes.SET_ORDER,
+    payload: order,
+  };
+};
+export const resetCart = () => {
+  return {
+    type: actionTypes.RESET_CART,
+  };
+};
+export const filterItem = (item) => {
+  return {
+    type: actionTypes.FILTER_ITEM,
+    payload: item,
+  };
+};

@@ -1,0 +1,36 @@
+.order__heading {
+  position: relative;
+  top: 30px;
+  left: 40px;
+  font-size: 24px;
+}
+
+.order__outerdiv {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  position: relative;
+  top: 80px;
+  left: 40px;
+  width: 90%;
+  min-height: 200px;
+  height: auto;
+
+  padding-bottom: 40px;
+}
+
+.order__orderitem {
+  position: relative;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  height: 100px;
+  top: 30px;
+  left: 80px;
+  width: 80%;
+  box-shadow: 0 2px 8px rgba(149, 3, 3, 0.667);
+}
+
+.order__noorder {
+  color: red;
+  position: relative;
+  top: 30px;
+  left: 30px;
+}

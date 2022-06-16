@@ -37,3 +37,11 @@
     color: inherit;
     text-decoration: none
 }
+.header__order__button{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 40px;
+    width: 180px;
+    justify-content: space-between;
+}

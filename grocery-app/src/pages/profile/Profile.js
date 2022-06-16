@@ -10,7 +10,11 @@ const Profile = ({ userObj }) => {
       <Header />
       {userObj ? (
         <div className={classes.profile__outerbox}>
-          <img className={classes.profile__image} src={profileImg} />
+          <img
+            className={classes.profile__image}
+            src={profileImg}
+            alt="Profile"
+          />
           <div className={classes.username__box}>
             <div className={classes.name}>User Name</div>
             <div className={classes.userdata}>{userObj.username}</div>
