@@ -19,7 +19,7 @@ const ProductList = ({
   };
 
   useEffect(() => {
-    setNoOfPages(Math.ceil(products.length / 10));
+    setNoOfPages(Math.ceil(products.length / itemsPerPage));
   });
 
   let listOfProduct = products

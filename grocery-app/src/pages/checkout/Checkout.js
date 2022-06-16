@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../../components/header/Header";
-import shopReducer from "../../redux/Shopping/shoppings-reducer";
 import classes from "./Chekout.module.css";
 import { placeOrder } from "../../services/order_services";
 import { connect } from "react-redux";
@@ -13,7 +12,7 @@ const Checkout = ({ total, cart, token, resetCart }) => {
   let alertStatus = false;
   let navigate = useNavigate();
   const handlePlaceOrder = (token) => {
-    if (addesss == "") {
+    if (addesss === "") {
       alert("address should not be empty");
     } else {
       cart.forEach((element) => {
